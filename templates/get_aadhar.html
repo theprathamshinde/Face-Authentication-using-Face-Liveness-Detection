@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Aadhaar</title>
+</head>
+<body>
+    <h1>Get Aadhaar</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <button type="submit">Get Aadhaar</button>
+    </form>
+    {% if aadhaar_path %}
+        <h3>Aadhaar File:</h3>
+        <a href="{{ aadhaar_path }}" target="_blank">View Aadhaar</a>
+    {% endif %}
+    <p>{{ get_flashed_messages() }}</p>
+    <a href="{{ url_for('index') }}">Go Home</a>
+</body>
+</html>

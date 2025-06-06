@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Aadhaar</title>
+</head>
+<body>
+    <h1>Update Aadhaar</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="aadhaar_file">Aadhaar File:</label>
+        <input type="file" id="aadhaar_file" name="aadhaar_file" required><br><br>
+        <button type="submit">Update Aadhaar</button>
+    </form>
+    <p>{{ get_flashed_messages() }}</p>
+    <a href="{{ url_for('index') }}">Go Home</a>
+</body>
+</html>

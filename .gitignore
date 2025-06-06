@@ -1,0 +1,53 @@
+# Ignore virtual environment
+.venv/
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.whl
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Logs and outputs
+*.log
+*.tfevents.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Model weights and heavy resources
+FaceLiveness/resources/anti_spoof_models/*.pth
+FaceLiveness/resources/detection_model/*.caffemodel
+
+# Dataset samples
+FaceLiveness/datasets/
+FaceLiveness/images/sample/
+
+# Optional: exclude specific binaries or tools
+*.exe
+*.bat
+
+# Tree/listing files
+tree.txt
+
+# If you ever use environment variable files
+.env
+
+# Ignore backup files
+*~
+*.bak

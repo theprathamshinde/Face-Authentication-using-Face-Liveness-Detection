@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            border: 1px solid black;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Face Recognition System</h1>
+    <div>
+        <h3>Live Camera Feed:</h3>
+        <img id="camera_feed" src="/video_feed" width="700">
+    </div>
+    <div>
+        <button id="login">Login</button>
+        <button id="logout">Logout</button>
+        <button id="register">Register New User</button>
+    </div>
+    <script>
+        async function captureFrame() {
+            const video = document.querySelector('#camera_feed');
+            const response = await fetch(video.src);
+            const blob = await response.blob();
+            const arrayBuffer = await blob.arrayBuffer();
+            const uint8Array = new Uint8Array(arrayBuffer);
+            return uint8Array;
+        }
+
+        async function sendFrame(endpoint) {
+            const frame = await captureFrame();
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ frame: Array.from(frame) }),
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        document.getElementById('login').addEventListener('click', () => sendFrame('/login'));
+        document.getElementById('logout').addEventListener('click', () => sendFrame('/logout'));
+        document.getElementById('register').addEventListener('click', async () => {
+            const name = prompt("Enter your name:");
+            if (name) {
+                const frame = await captureFrame();
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, frame: Array.from(frame) }),
+                });
+                const result = await response.json();
+                alert(result.message);
+            }
+        });
+    </script>
+</body>
+</html>
