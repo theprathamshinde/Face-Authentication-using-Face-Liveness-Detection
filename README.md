@@ -45,7 +45,7 @@ Traditional face recognition systems are vulnerable to spoofing attacks using pr
 ---
 
 ### Project Demo Video
-[Download model](https://drive.google.com/drive/folders/1u_8F_7JbJqvZLAW_N-W1pBTaNy2qmQKx?usp=drive_link)
+[watch video](https://drive.google.com/drive/folders/1u_8F_7JbJqvZLAW_N-W1pBTaNy2qmQKx?usp=drive_link)
 
 
 Architectural Design
