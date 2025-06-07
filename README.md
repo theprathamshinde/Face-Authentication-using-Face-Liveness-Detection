@@ -25,7 +25,7 @@ Traditional face recognition systems are vulnerable to spoofing attacks using pr
 
 ## 🧪 Methodology
 
-- **Face Detection**: Use a pre-trained face detector (e.g., Haar Cascade or MTCNN) to localize the face in video frames.
+- **Face Detection**: Use a pre-trained face detector (from : computervisiondeveloper) to localize the face in video frames.
 - **Liveness Detection**: Use deep learning (CNN-based) classifier to detect liveness from facial features.
 - **User Authentication**: Match live faces with registered identities using a face embedding model (e.g., FaceNet, Dlib).
 - **Spoof Prevention**: Real-time rejection of spoofed inputs based on liveness confidence score.
