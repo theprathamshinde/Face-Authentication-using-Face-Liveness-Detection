@@ -7,7 +7,8 @@ This project implements a real-time **face authentication system** with **livene
 ## 🧩 Problem Statement
 
 Traditional face recognition systems are vulnerable to spoofing attacks using printed photos, replayed videos, or 3D masks. This project aims to build a lightweight, efficient, and accurate system that can **detect liveness** and distinguish between a live person and a spoof attempt using a **standard webcam**.
-
+### Project Demo Video
+[watch video](https://drive.google.com/file/d/1HbsWrZ7rXH7KaZOdooD9uchhqAuvaJnX/view?usp=drive_link)
 ---
 
 ## 🎯 Objectives
@@ -44,8 +45,7 @@ Traditional face recognition systems are vulnerable to spoofing attacks using pr
 
 ---
 
-### Project Demo Video
-[watch video](https://drive.google.com/drive/folders/1u_8F_7JbJqvZLAW_N-W1pBTaNy2qmQKx?usp=drive_link)
+
 
 
 Architectural Design
